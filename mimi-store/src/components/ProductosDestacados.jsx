@@ -1,21 +1,28 @@
+import shampooImg from "../assets/images/shampoo1.jpg";
+import acondImg from "../assets/images/acondicionador1.jpg";
+import serumImg from "../assets/images/serum1.jpg";
+
 const productos = [
   {
     nombre: "Shampoo Profesional",
     descripcion: "Fórmula nutritiva que aporta brillo y fuerza.",
     cantidad: "500 ml",
     precio: "$37.990"
+    , image: shampooImg
   },
   {
     nombre: "Acondicionador Reparador",
     descripcion: "Desenreda y repara puntas abiertas.",
     cantidad: "400 ml",
-    precio: "$38.990"
+    precio: "$38.990",
+    image: acondImg
   },
   {
     nombre: "Sérum Nutritivo",
     descripcion: "Control de frizz y protección térmica.",
     cantidad: "50 ml",
-    precio: "$19.990"
+    precio: "$19.990",
+    image: serumImg
   }
 ]
 
@@ -37,7 +44,9 @@ function ProductosDestacados() {
 
               <h3>{producto.nombre}</h3>
 
-              <p>{producto.descripcion}</p>
+                <img src={producto.image} alt={producto.nombre} className="product-image img-fluid mb-2" />
+
+                <p>{producto.descripcion}</p>
 
               <div className="product-meta">
                 <span>{producto.cantidad}</span>
