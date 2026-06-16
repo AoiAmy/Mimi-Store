@@ -1,3 +1,5 @@
+import logo from "../assets/images/logo-3.0.png";
+
 function Navbar() {
   return (
     <header>
@@ -5,8 +7,9 @@ function Navbar() {
 
         <div className="container">
 
-          <a href="/" className="navbar-brand">
-            Mimi Store
+          <a href="/" className="navbar-brand d-flex align-items-center">
+            <img src={logo} alt="Mimi Store" style={{ height: 40 }} />
+            <span className="ms-2 fw-bold">Mimi Store</span>
           </a>
 
           <button
