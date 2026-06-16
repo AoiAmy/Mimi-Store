@@ -398,6 +398,72 @@ nav ul li { position: relative; }
   outline: 2px solid rgba(37,99,235,0.15);
 }
 
+/* Accessibility: AAA mode styles */
+/* Applied when `body` has class `a11y-aaa` */
+.a11y-aaa {
+  background: #000 !important;
+  color: #ffffff !important;
+  font-size: 1.15rem; /* base scale up for readability */
+  line-height: 1.5;
+}
+
+.a11y-aaa a,
+.a11y-aaa .nav-link,
+.a11y-aaa .btn,
+.a11y-aaa .hero .cta {
+  color: #ffffff !important;
+}
+
+.a11y-aaa .hero .cta,
+.a11y-aaa .btn-add,
+.a11y-aaa .submenu-button {
+  background: #ffd400 !important; /* high contrast CTA */
+  color: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+
+.a11y-aaa *:focus {
+  outline: 4px solid #00e5ff !important;
+  outline-offset: 3px;
+  box-shadow: none !important;
+}
+
+.a11y-aaa img {
+  filter: none !important;
+}
+
+/* Make interactive targets larger for touch/keyboard */
+.a11y-aaa button,
+.a11y-aaa input,
+.a11y-aaa select,
+.a11y-aaa textarea,
+.a11y-aaa a {
+  min-height: 44px;
+  padding: 0.6rem 0.9rem;
+}
+
+/* Size options independent of AAA mode */
+body.a11y-size-normal {
+  font-size: 100%;
+}
+
+body.a11y-size-large {
+  font-size: 115%;
+  line-height: 1.5;
+}
+
+body.a11y-size-xlarge {
+  font-size: 130%;
+  line-height: 1.6;
+}
+
+.accessibility-controls .btn.active,
+.accessibility-controls .btn:active,
+.accessibility-controls .btn[aria-pressed="true"] {
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.08);
+}
+
+
 /* Mobile: mostrar submenu como bloque dentro del flujo */
 @media (max-width: 720px) {
   .submenu { position: static; box-shadow: none; padding: 0; border: none; background: transparent; }
@@ -597,3 +663,145 @@ main {
     width: 100%;
   }
 }
+/* =========================
+   PANEL DE ACCESIBILIDAD
+========================= */
+.accessibility-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.accessibility-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 280px;
+
+  background: #fff;
+  color: var(--text);
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  padding: 1rem;
+
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  z-index: 10000;
+}
+
+.accessibility-panel h6 {
+  margin: 0 0 .5rem;
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.accessibility-panel .option-group {
+  margin-bottom: 1rem;
+}
+
+.accessibility-panel .btn-group {
+  width: 100%;
+}
+
+.accessibility-panel .btn {
+  flex: 1;
+}
+
+.accessibility-panel h6 {
+  margin: 0 0 .5rem 0;
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.accessibility-panel .option-group {
+  margin-bottom: 1rem;
+}
+
+.accessibility-panel .btn-group {
+  width: 100%;
+}
+
+.accessibility-panel .btn {
+  flex: 1;
+}
+
+.a11y-aaa .benefit,
+.a11y-aaa .product-card,
+.a11y-aaa .cart,
+.a11y-aaa .cart-item,
+.a11y-aaa .formulario,
+.a11y-aaa .submenu {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.a11y-aaa input,
+.a11y-aaa textarea,
+.a11y-aaa select {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+.a11y-aaa .product-meta .type,
+.a11y-aaa .empty,
+.a11y-aaa .muted {
+  color: #fff !important;
+}
+.a11y-aaa .accessibility-panel {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+.a11y-aaa .accessibility-panel h6 {
+  color: #fff !important;
+}
+
+.a11y-aaa .benefit,
+.a11y-aaa .product-card,
+.a11y-aaa .cart,
+.a11y-aaa .cart-item,
+.a11y-aaa .formulario,
+.a11y-aaa .submenu {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.a11y-aaa input,
+.a11y-aaa textarea,
+.a11y-aaa select {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+.a11y-aaa .product-meta .type,
+.a11y-aaa .empty,
+.a11y-aaa .muted {
+  color: #fff !important;
+}
+
+.accessibility-wrapper .btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .accessibility-panel {
+    left: 0;
+    right: auto;
+    width: 280px;
+  }
+}
+
+
+
+
+
+
+
+
+
+

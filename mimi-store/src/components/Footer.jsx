@@ -13,9 +13,10 @@ function Footer() {
         </h2>
 
         <address>
-          <div>Tel: +56 9 7536 8889</div>
-          <div>Email: info.mimistore@gmail.com</div>
-          <div>Dirección: Calle principal 123, Santiago</div>
+          <div>Alumno: Francisca López Martínez</div>
+          <div>Profesor: Victor Armando Vásquez Muñoz</div>
+          <div>Asignatura: Programación Front End</div>
+          <div>Sección: TI3031/D-FB50-N3-P13-C1/D</div>
         </address>
 
         <button

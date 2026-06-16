@@ -1,15 +1,21 @@
 import logo from "../assets/images/logo-3.0.png";
+import AccessibilityButton from "./AccessibilityButton";
 
 function Navbar() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-
         <div className="container">
 
           <a href="/" className="navbar-brand d-flex align-items-center">
-            <img src={logo} alt="Mimi Store" style={{ height: 40 }} />
-            <span className="ms-2 fw-bold">Mimi Store</span>
+            <img
+              src={logo}
+              alt="Mimi Store"
+              style={{ height: 40 }}
+            />
+            <span className="ms-2 fw-bold">
+              Mimi Store
+            </span>
           </a>
 
           <button
@@ -17,28 +23,42 @@ function Navbar() {
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#contenidoMenu"
+            aria-controls="contenidoMenu"
+            aria-expanded="false"
+            aria-label="Abrir menú de navegación"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div className="collapse navbar-collapse" id="contenidoMenu">
+          <div
+            className="collapse navbar-collapse"
+            id="contenidoMenu"
+          >
 
             <ul className="navbar-nav ms-auto">
 
               <li className="nav-item">
-                <a href="/" className="nav-link">Inicio</a>
+                <a href="/" className="nav-link">
+                  Inicio
+                </a>
               </li>
 
               <li className="nav-item">
-                <a href="/productos" className="nav-link">Productos</a>
+                <a href="/productos" className="nav-link">
+                  Productos
+                </a>
               </li>
 
               <li className="nav-item">
-                <a href="#beneficios" className="nav-link">Beneficios</a>
+                <a href="#beneficios" className="nav-link">
+                  Beneficios
+                </a>
               </li>
 
               <li className="nav-item">
-                <a href="#contacto" className="nav-link">Contacto</a>
+                <a href="#contacto" className="nav-link">
+                  Contacto
+                </a>
               </li>
 
               <li className="nav-item">
@@ -53,13 +73,17 @@ function Navbar() {
 
             </ul>
 
+            {/* Botón de accesibilidad */}
+            <div className="ms-lg-3 mt-2 mt-lg-0">
+              <AccessibilityButton />
+            </div>
+
           </div>
 
         </div>
-
       </nav>
     </header>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
