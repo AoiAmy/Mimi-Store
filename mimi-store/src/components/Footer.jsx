@@ -18,12 +18,17 @@ function Footer() {
           <div>Dirección: Calle principal 123, Santiago</div>
         </address>
 
-        <a
-          href="/contacto"
+        <button
+          type="button"
           className="btn btn-primary"
+          onClick={() => {
+            const modalEl = document.getElementById('contactoModal');
+            const modal = window.bootstrap?.Modal.getOrCreateInstance(modalEl);
+            modal?.show();
+          }}
         >
           Envíanos un mensaje
-        </a>
+        </button>
 
         <p>
           © 2026 Mimi Store — Todos los derechos reservados.

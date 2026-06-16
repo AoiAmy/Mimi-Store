@@ -1,30 +1,45 @@
-import Navbar from './components/Navbar'
-import Carousel from './components/Carousel'
-import Hero from './components/Hero'
-import ProductosDestacados from './components/ProductosDestacados'
-import Beneficios from './components/Beneficios'
-import Footer from './components/Footer'
-import LoginModal from './components/LoginModal'
-import ContactoConfirmModal from './components/ContactoConfirmModal'
+import { Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import ContactModal from "./components/ContactModal";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+import Inicio from "./pages/Inicio";
+import Contacto from "./pages/Contacto";
+import Registro from "./pages/Registro";
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Hide any Bootstrap modal when route changes to avoid leftover backdrops
+    try {
+      const modalEl = document.getElementById("contactoModal");
+      const modal = window.bootstrap?.Modal.getOrCreateInstance(modalEl);
+      modal?.hide();
+    } catch (e) {
+      // ignore
+    }
+
+    // Remove any modal backdrops and modal-open body class
+    const backdrops = document.querySelectorAll(".modal-backdrop");
+    backdrops.forEach((b) => b.remove());
+    document.body.classList.remove("modal-open");
+  }, [location.pathname]);
   return (
     <>
       <Navbar />
-      <Carousel />
 
-      <main>
-        <Hero />
-        <ProductosDestacados />
-        <Beneficios />
-      </main>
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/registro" element={<Registro />} />
+      </Routes>
 
-      <Footer />
-
-      <LoginModal />
-      <ContactoConfirmModal />
+      <ContactModal />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
